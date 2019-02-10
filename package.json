@@ -1,6 +1,6 @@
 {
   "name": "@fatesigner/img-compressor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Web img compressor.",
   "license": "MIT",
   "keywords": [
@@ -21,6 +21,9 @@
     "url": "https://github.com/fatesigner/img-compressor/issues"
   },
   "homepage": "https://github.com/fatesigner/img-compressor#readme",
+  "main": "./img-compressor.cmd.js",
+  "module": "./img-compressor.js",
+  "types": "./img-compressor.d.ts",
   "scripts": {
     "clean": "gulp clean --gulpfile build/gulpfile.js",
     "build": "gulp build --gulpfile build/gulpfile.js"
