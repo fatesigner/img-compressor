@@ -17,7 +17,7 @@
 <script>
   let $input = document.getElementById('input');
   $input.onchange = function () {
-    window.ImgCompressor.CompressImg($input.files[0]).then((newFile) => {
+    window.ImgCompressor.compressImg($input.files[0]).then((newFile) => {
       console.log(newFile);
     });
   };

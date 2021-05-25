@@ -25,15 +25,15 @@ npm i -S @fatesigner/img-compressor
 
 ## 使用
 ```ts
-import { CompressImg } from '@fatesigner/img-compressor';
+import { compressImg } from '@fatesigner/img-compressor';
 
 let $input = document.getElementById('input');
 
 // use async
-let newFile: ICompressImgResponse = await CompressImg($input.files[0]);
+let newFile: ICompressImgResponse = await compressImg($input.files[0]);
 
 // use promise
-CompressImg($input.files[0]).then((newFile) => {
+compressImg($input.files[0]).then((newFile) => {
   console.log(newFile);
 });
 ```
@@ -49,7 +49,7 @@ CompressImg($input.files[0]).then((newFile) => {
 <script>
   let $input = document.getElementById('input');
   $input.onchange = function () {
-    window.ImgCompressor.CompressImg($input.files[0]).then((newFile) => {
+    window.ImgCompressor.compressImg($input.files[0]).then((newFile) => {
       console.log(newFile);
     });
   };
@@ -57,7 +57,7 @@ CompressImg($input.files[0]).then((newFile) => {
 ```
 
 ## API
-### CompressImg(file, options) => [ICompressImgResponse](#ICompressImgResponse)
+### compressImg(file, options) => [ICompressImgResponse](#ICompressImgResponse)
 > 压缩指定图片.
 
 | Param | Description |

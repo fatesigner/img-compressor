@@ -2,7 +2,7 @@
  * img-compressor
  */
 
-import { ICompressImgOptions, ICompressImgResponse } from './interfaces';
+import { ICompressImgOptions, ICompressImgResponse } from './types';
 
 const DefaultOptions: ICompressImgOptions = {
   quality: 0.6
@@ -14,15 +14,13 @@ const DefaultOptions: ICompressImgOptions = {
  * @param options
  * @constructor
  */
-export async function CompressImg(
-  file: Blob,
-  options: ICompressImgOptions
-): Promise<ICompressImgResponse> {
+export async function compressImg(file: Blob, options: ICompressImgOptions): Promise<ICompressImgResponse> {
   const options_: ICompressImgOptions = Object.assign({}, DefaultOptions, options);
   if (!(window as any).lrz) {
     await import('./lib/localResizeIMG/dist/lrz.bundle.js');
   }
-  return (window as any).lrz(file, {
+  return (window as any)
+    .lrz(file, {
       quality: options_.quality
     })
     .then(function (res: ICompressImgResponse) {
